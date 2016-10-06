@@ -153,6 +153,12 @@ const PROP_TYPES = {
   perspectiveEnabled: PropTypes.bool,
 
   /**
+    * `onLoad` callback is fired on the first complete render,
+    * when all dependencies have been loaded
+    */
+  onLoad: PropTypes.func
+
+  /**
     * Specify the bearing of the viewport
     */
   bearing: React.PropTypes.number,
@@ -226,6 +232,10 @@ export default class MapGL extends Component {
       // TODO?
       // attributionControl: this.props.attributionControl
     });
+    
+    if (this.props.onLoad) {
+      map.once('load', this.props.onLoad);
+    }
 
     select(map.getCanvas()).style('outline', 'none');
 
