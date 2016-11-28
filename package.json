@@ -1,5 +1,5 @@
 {
-  "name": "3f335bcfd286030b4771414e30b0582c84dc12000efa5ad019765ec55339860d",
+  "name": "react-map-gl",
   "description": "A React wrapper for MapboxGL-js and overlay API.",
   "version": "1.6.1",
   "main": "index.js",
